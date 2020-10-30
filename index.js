@@ -1,6 +1,10 @@
-import {NativeEventEmitter, NativeModules} from 'react-native';
+import {NativeEventEmitter, NativeModules, Platform} from 'react-native';
 
-const {RNXUpdate} = NativeModules;
+let {RNXUpdate} = NativeModules;
+
+if (Platform.OS === 'ios') {
+    RNXUpdate = {}
+}
 
 ///XUpdate初始化参数
 class InitArgs {
